@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="key-banner">
+    <p>You need a free OMDB API key to use this app.
+       Get one at <a href="https://www.omdbapi.com/apikey.aspx" target="_blank">omdbapi.com</a>
+    </p>
+    <div class="key-row">
+        <input type="text" id="key-input" placeholder="Paste your API key here">
+        <button onclick="saveKey()">Save</button>
+    </div>
+    <span id="key-err"></span>
+</div>
+
+<header>
+    <div class="header-wrap">
+        <h1>🎬 Movie Search</h1>
+        <button onclick="toggleKeyBanner()" id="settings-btn">⚙ API Key</button>
+    </div>
+</header>
+
+<main>
+    <div class="search-row">
+        <input type="text" id="search-input" placeholder="Search for a movie or TV show...">
+        <button id="search-btn">Search</button>
+    </div>
+
+    <p id="loading-msg">Searching...</p>
+    <p id="error-msg"></p>
+
+    <div id="results"></div>
+</main>
+
+<div id="overlay" onclick="handleOverlayClick(event)">
+    <div id="modal">
+        <button class="close-btn" onclick="closeModal()">✕</button>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<footer>
+    <p>Data from <a href="https://www.omdbapi.com" target="_blank">OMDB API</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
